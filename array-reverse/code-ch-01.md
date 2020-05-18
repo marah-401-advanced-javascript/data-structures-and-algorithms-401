@@ -13,4 +13,4 @@
 
 ## Solution
 
-![UML](/assets/ch01.jpg)
+![white boarding](/assets/ch01.jpg)
