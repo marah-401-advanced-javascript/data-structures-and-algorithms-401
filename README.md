@@ -7,3 +7,6 @@ Code challenge 1 | [array-reverse](https://github.com/marah-401-advanced-javascr
 Code challenge 2 | [array-shift](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/2)
 
 Code challenge 3 | [array-binary](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/4)
+
+
+Code challenge 4 | [linked list](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/5)
