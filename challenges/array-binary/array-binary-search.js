@@ -10,9 +10,9 @@ function binarySearch(arr, searchKey){
       return returnedVal;
     }
   }
-if (returnedVal===undefined || returnedVal===0){
-  return -1;
-}
+  if (returnedVal===undefined || returnedVal===0){
+    return -1;
+  }
     
 }
 
