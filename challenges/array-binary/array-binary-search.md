@@ -12,4 +12,4 @@
 
 ## Solution
 
-![white boarding](/assets/ch03.jpg)
+![white boarding](./assets/ch03.jpg)
