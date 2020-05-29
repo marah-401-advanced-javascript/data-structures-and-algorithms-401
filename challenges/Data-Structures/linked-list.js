@@ -11,50 +11,43 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+
   insert(value) {
-    const node = new Node(value);
+    const newNode = new Node(value);
     if (!this.head) {
-      this.head = node;
+      this.head = newNode;
       return this;
     }   
-
     let current = this.head;
-    if (!(this.includes(value))){
-      current.next = node;
-      return this;
+    while (current.next){
+      current = current.next;
     }
+    current.next = newNode;
+    return this;
   }
+
   includes(value){
-    let myVar = this.head;
-    while (myVar.next){
-      if (value === myVar.value){
-        myVar = myVar.next;
-        return true;
+    let currentNode = this.head;
+    if (value === currentNode.value){return true;}
+    else{
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+        if (value === currentNode.value) {return true;}
       }
-    }
+    } 
     return false;
   }
+
   toString() {
     let current = this.head;
     let string = '';
-    if (!current.next){
-      string = `{ ${current.value} }` + ` -> { ${current.next} }`;
-    }
+    string = `{ ${current.value} }`;
     while (current.next){
-      string = `{ ${current.value} }`;
       current = current.next;
-      string = string + ` -> { ${current.value} }` + ` -> { ${current.next} }`;
-
+      string = string + ` -> { ${current.value} }`;
     }
-    return string;
+    return string + ` -> { ${current.next} }`;
   }
 }
 
-let instance = new LinkedList();
-instance.insert(1);
-instance.insert(7);
-
-
-console.log(instance.includes(7));
-console.log('instance', instance);
-console.log('instance', instance.toString());
+module.exports = LinkedList;
