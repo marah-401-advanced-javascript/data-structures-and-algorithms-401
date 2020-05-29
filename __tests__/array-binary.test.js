@@ -1,6 +1,6 @@
 'use strict';
 
-const binarySearch = require('../array-binary/array-binary-search.js');
+const binarySearch = require('../challenges/array-binary/array-binary-search.js');
 
 describe('Binary array', () => {
   test('It should return the index of the matching number of the given number', () => {

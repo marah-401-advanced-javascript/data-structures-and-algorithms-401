@@ -1,5 +1,5 @@
 'use strict';
-const linkedListModule = require('../challenges/linkedList/linked-list');
+const linkedListModule = require('../challenges/Data-Structures/linked-list');
 
 describe('Linked List', () => {
 

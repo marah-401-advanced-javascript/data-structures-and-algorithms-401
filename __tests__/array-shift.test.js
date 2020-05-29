@@ -1,6 +1,6 @@
 'use strict';
 
-const insertShiftArray = require('../array-shift/array-shift.js');
+const insertShiftArray = require('../challenges/array-shift/array-shift.js');
 
 describe('Shift array', () => {
   test('It should add the passed value at the middle index of the passed even array', () => {
