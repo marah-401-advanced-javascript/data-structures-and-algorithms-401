@@ -97,6 +97,22 @@ class LinkedList {
       }
     }
     return ;
+  }
+  kthFromEnd(val){
+    let myArr=[];
+    let current = this.head;
+    while (current.next){
+      myArr.push(current.value);
+      current = current.next;
+    }
+    myArr.push(current.value);
+    const myVar= myArr.length-1;
+    const diff = myVar - val ; 
+    if (val > myVar ){
+      return 'Exception';
+    }else{
+      return myArr[diff];
+    }
   } 
 }
 
@@ -110,5 +126,7 @@ class LinkedList {
 // ll.insertAfter(200,100000);
 
 // ll.toString();
+// ll.kthFromEnd(0);
+
 
 module.exports = LinkedList;
