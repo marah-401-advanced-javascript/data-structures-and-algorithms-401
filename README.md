@@ -16,3 +16,6 @@ Code challenge 5 | [linked list](https://github.com/marah-401-advanced-javascrip
 
 
 Code challenge 6 | [linked list-2](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/12)
+
+
+Code challenge 7 | [linked list-3](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/13)

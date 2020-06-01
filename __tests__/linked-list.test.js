@@ -97,5 +97,14 @@ describe('Linked List', () => {
     linkedListInstance.insertAfter(9,8);
     expect(linkedListInstance.toString()).toStrictEqual('{ 10 } -> { 9 } -> { 8 } -> { null }');
   });
+  it('14. Can successfully return the node’s value that is "k" from the end of the linked list', () => {
+    const linkedListInstance = new linkedListModule();
+    linkedListInstance.insert(9);
+    linkedListInstance.insert(7);
+    linkedListInstance.insert(5);
+    linkedListInstance.insert(3);
+    linkedListInstance.insert(1);
+    expect(linkedListInstance.kthFromEnd(0)).toStrictEqual(9);
+  });
 
 });
