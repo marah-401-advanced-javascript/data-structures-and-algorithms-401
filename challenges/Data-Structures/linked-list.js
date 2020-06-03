@@ -116,17 +116,60 @@ class LinkedList {
   } 
 }
 
- 
 
-// const ll = new LinkedList();
-// ll.insert(100);
-// ll.insert(200);
-// ll.insert(300);
-// ll.append(0);
-// ll.insertAfter(200,100000);
+function llmerge(l1 , l2){
+  let first = l1.head.value;
+  let second = l2.head.value;
+  let newNode = new Node(first);
+  let newll = new LinkedList();
+  newll.head = newNode;
+  newll.append(second);
 
-// ll.toString();
-// ll.kthFromEnd(0);
+  while((l1.head.next)||(l2.head.next)){
+    if (l1.head.next){
+      let first2 = l1.head.next.value;
+      newll.append(first2);
+    }
+    if (l2.head.next){
+      let second2 = l2.head.next.value;
+      newll.append(second2);        
+    }
+    l1.head = l1.head.next;
+    l2.head = l2.head.next;
+      
+    if (!l1.head){
+      l1.head=0;
+      l1.next=null;
+    }
+    if (!l2.head){
+      l2.head=0;
+      l2.next=null;
+    }
+  }
+  return newll ; 
+}
 
+
+const l1 = new LinkedList();
+l1.append(100);
+l1.append(200);
+l1.append(300);
+l1.append(400);
+
+console.log(l1.toString());
+console.log("---------------------------------------");
+
+
+const l2 = new LinkedList();
+l2.append(1);
+l2.append(2);
+l2.append(3);
+l2.append(4);
+
+console.log(l2.toString());
+console.log("---------------------------------------");
+
+const mergedLL = llmerge(l1 , l2);
+console.log(mergedLL.toString());
 
 module.exports = LinkedList;

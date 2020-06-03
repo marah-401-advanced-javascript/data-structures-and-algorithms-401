@@ -31,3 +31,5 @@ Create a singly linked list with these features:
 ![white boarding](/assets/ch05.jpg)
 ![white boarding](/assets/ch06.jpg)
 ![white boarding](/assets/ch07.jpg)
+![white boarding](/assets/ch08.jpg)
+
