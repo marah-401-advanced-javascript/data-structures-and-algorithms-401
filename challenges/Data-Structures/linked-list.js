@@ -114,6 +114,49 @@ class LinkedList {
       return myArr[diff];
     }
   } 
+
+  palindrome(){
+    let current= this.head;
+    let arr1=[];
+    while(current.next){
+      arr1.push(current.value);
+      current = current.next;
+    }
+    arr1.push(current.value);
+    let reversedArr=[];
+    for (let i=0 ; i<arr1.length ; i++ ){
+      reversedArr[i]=arr1[arr1.length-i-1];
+    }
+    console.log(arr1);
+    console.log(reversedArr);
+    for (let i=0 ; i<arr1.length ; i++ ){
+      if (arr1[i]!==reversedArr[i])return false ;
+    }
+    return true ;
+  }
+
+  reverse(){
+    let current= this.head;
+    let arr1=[];
+    while(current.next){
+      arr1.push(current.value);
+      current = current.next;
+    }
+    arr1.push(current.value);
+    let reversedArr=[];
+    for (let i=0 ; i<arr1.length ; i++ ){
+      reversedArr[i]=arr1[arr1.length-i-1];
+    }
+    let newNode = new Node(reversedArr[0]);
+    let newll = new LinkedList();
+    newll.head = newNode;
+    for (let i=1 ; i<reversedArr.length ; i++ ){
+      newll.append(reversedArr[i]);
+    }
+    return newll.toString() ;
+  }
+  
+
 }
 
 
@@ -157,7 +200,7 @@ l1.append(300);
 l1.append(400);
 
 console.log(l1.toString());
-console.log("---------------------------------------");
+console.log('---------------------------------------');
 
 
 const l2 = new LinkedList();
@@ -167,7 +210,7 @@ l2.append(3);
 l2.append(4);
 
 console.log(l2.toString());
-console.log("---------------------------------------");
+console.log('---------------------------------------');
 
 const mergedLL = llmerge(l1 , l2);
 console.log(mergedLL.toString());
