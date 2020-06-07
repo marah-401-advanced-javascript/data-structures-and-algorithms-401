@@ -94,3 +94,5 @@ myQueue.enqueue(3);
 // console.log(myQueue);
 console.log(myQueue.dequeue());
 console.log(myQueue);
+
+module.exports={Node ,Stack};
