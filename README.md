@@ -22,3 +22,7 @@ Code challenge 7 | [linked list-3](https://github.com/marah-401-advanced-javascr
 
 
 Code challenge 8 | [linked list-3](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/14)
+
+
+Code challenge 9 | [stack & queue](https://github.com/marah-401-advanced-javascript/data-structures-and-algorithms-401/pull/15)
+
