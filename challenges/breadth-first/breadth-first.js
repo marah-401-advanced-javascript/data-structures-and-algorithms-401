@@ -5,15 +5,15 @@ const Tree = require('../tree/tree');
 class BreadthFirst extends Tree {
   breadthFirst() {
     let output = [];
-    let temp = [];
+    let arr1 = [];
     if (!this.root) return null;
-    temp.push(this.root);
+    arr1.push(this.root);
     
-    while (temp.length > 0) {
-      let node = temp.shift();
+    while (arr1.length > 0) {
+      let node = arr1.shift();
       output.push(node.value);
-      if (node.left) temp.push(node.left);
-      if (node.right) temp.push(node.right);
+      if (node.left) arr1.push(node.left);
+      if (node.right) arr1.push(node.right);
     }
     return output;
   }
