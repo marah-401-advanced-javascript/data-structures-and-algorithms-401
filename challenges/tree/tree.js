@@ -85,3 +85,5 @@ class BinarySearch{
   }  
 }
 
+module.exports= BinaryTree;
+
