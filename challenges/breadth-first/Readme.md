@@ -14,7 +14,7 @@
 
 ## Solution
 
-![breadth](/assets/17wb..PNG)
+![breadth](/assets/17wb.PNG)
 
 
 
