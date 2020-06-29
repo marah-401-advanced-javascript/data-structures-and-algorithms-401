@@ -1,18 +1,21 @@
 `use strict`;
 
+const testArr=[8,23,4,42,1,16,15];
+
 function sortArr(arr){
-  for (let i = 0; i < arr.length; i++) {
-    let j = i - 1;
-    let temp = arr[i];
-    while (j >= 0 && temp < arr[j]) {
-      arr[j + 1] = arr[j];
-      j--;
+  for (let j=0; j<arr.length; j++){
+    let min = arr[j];
+    for(let i=0+j; i<arr.length; i++){
+      if (min > arr[i]){
+        min = arr[i];
+        arr[i]=arr[j];
+        arr[j]=min;
+      } 
     }
-    arr[j + 1] = temp;
-  }
+  }  
+
   return arr;
 }
 
-const testArr=[8,23,4,42,16,15];
 console.log(sortArr(testArr));
 
