@@ -1,6 +1,6 @@
-# linked list
+# Insertion Sort
 
-- Implementation of trees
+- Implementation of arrays sorting
 
 ## Challenge
 
