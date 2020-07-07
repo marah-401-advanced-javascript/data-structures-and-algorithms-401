@@ -50,6 +50,7 @@ class LinkedList {
 
 
 class Hashmap {
+  
   constructor(size) {
     this.size = size;
     this.storage = new Array(size); // [] with that size
