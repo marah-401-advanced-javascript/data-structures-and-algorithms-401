@@ -33,12 +33,12 @@ class Hashmap {
     const sumCharCode = key.split('').reduce((acc, char) => {
       return acc + char.charCodeAt(0);
     }, 0);
-    console.log(' ');
-    console.log('sum charCode',sumCharCode);
+    // console.log(' ');
+    // console.log('sum charCode',sumCharCode);
     // 19 is a prime number YOU CAN USE ANY OTHER PRIME VALUE
     // since the resulted number can go out of size we will do % size
     const hashKey = (sumCharCode * 19) % this.size;
-    console.log('HASH KEY', hashKey);
+    // console.log('HASH KEY', hashKey);
     return hashKey; // 2000
   }
   
@@ -70,11 +70,11 @@ class Hashmap {
     const index = this.hash(key);
     //return TRUE if the key exists in the table already , FALSE if not
     if (this.storage[index]){
-      console.log('TRUE',this.storage[index]);
+    //   console.log('TRUE');
       return true;
   
     }else{
-      console.log('FALSE');
+    //   console.log('FALSE');
       return false;
   
     }
@@ -96,4 +96,30 @@ hashmap2.add('wrath', 'delight');
 hashmap2.add('flow', 'jam');///////
 hashmap2.add('guide', 'follow');
 
-console.log(hashmap1);
+console.log(hashmap1.storage[37].head.value); //first key value 
+
+///////////////////////////////////
+
+function leftJoin (h1 ,h2){
+  let bigArr=[];
+  for(let i=0 ; i<h1.storage.length ; i++){
+    let smallArr=[];
+    if (h1.storage[i]){
+      let test = Object.create(h1.storage[i].head.value);
+      while (test) {
+        for (let key in h1.storage[i].head.value) {
+          let scondVal =h2.contains(key) ? h2.get(key) : 'NULL';
+          smallArr.push(key, test[key], scondVal);
+          bigArr.push(smallArr);
+        }
+        test = test.next;
+      }
+    }
+  }
+
+  return bigArr;
+
+}
+///////////////////////////////////
+
+console.log(leftJoin(hashmap1, hashmap2));
