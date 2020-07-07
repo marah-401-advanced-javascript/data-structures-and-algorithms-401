@@ -1,4 +1,4 @@
-# Psuedo Queue
+# Left Join 
 
 - Implementation of the hash tables
 
@@ -21,5 +21,5 @@ Create function that will take a 2 hash tables and will join them both in one da
 
 ## Solution
 
-![leftjoin](/assets/left.PNG)
+![leftjoin](/assets/left.jpg)
 
