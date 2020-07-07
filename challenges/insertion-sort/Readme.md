@@ -9,7 +9,7 @@
 
 ## Solution
 
-![sort](/assets/sort2.PNG)
+![sort](/assets/sort22.PNG)
 
 
 
