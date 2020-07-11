@@ -13,7 +13,7 @@ class LinkedList {
   }
 
   insert(value) {
-    const node = new Node(value, this.head);
+    const node = new Node(value);
     if (!this.head){
       this.head = node;
     } else {
@@ -66,28 +66,33 @@ class LinkedList {
   insertBefore(value, newVal) {
     //if empty return nothing
     if (!this.head) return;
-    //if the value is head use insert()
+    //if the value is head 
     let node = new Node(newVal);
     let currentNode = this.head;
-    if(currentNode.value === value) return this.insert(newVal);
+    if(currentNode.value === value) {
+      node.next = this.head;
+      this.head = node;
+    }
     //if the value is any other node
     while (currentNode.next) {
+      currentNode = currentNode.next;
       if (currentNode.next.value === value) {
         node.next = currentNode.next;
         currentNode.next = node;
         return this;
       }
-      currentNode = currentNode.next;
     }
     return ;
   }  
 
   insertAfter(value, newVal) {
-    //if empty return nothing
     if (!this.head) return;
-    //if the value is any other node 
     let node = new Node(newVal);
     let currentNode = this.head;
+    if(currentNode.value === value) {
+      node.next = this.head.next;
+      this.head.next = node;
+    }
     while (currentNode.next) {
       currentNode = currentNode.next;
       if (currentNode.value === value) {
@@ -97,7 +102,9 @@ class LinkedList {
       }
     }
     return ;
-  }
+  }  
+
+  
   kthFromEnd(val){
     let myArr=[];
     let current = this.head;
@@ -115,82 +122,103 @@ class LinkedList {
     }
   } 
 
-  palindrome(){
-    let current= this.head;
-    let arr1=[];
-    while(current.next){
-      arr1.push(current.value);
-      current = current.next;
-    }
-    arr1.push(current.value);
-    let reversedArr=[];
-    for (let i=0 ; i<arr1.length ; i++ ){
-      reversedArr[i]=arr1[arr1.length-i-1];
-    }
-    console.log(arr1);
-    console.log(reversedArr);
-    for (let i=0 ; i<arr1.length ; i++ ){
-      if (arr1[i]!==reversedArr[i])return false ;
-    }
-    return true ;
-  }
 
   reverse(){
-    let current= this.head;
-    let arr1=[];
+    let newL = new LinkedList();
+    let current = this.head;
+    let newNode = new Node(current.val);
+    newL.insert(newNode.val);
     while(current.next){
-      arr1.push(current.value);
       current = current.next;
+      let newNode = new Node(current.val);
+      newL.insert(newNode.val);
     }
-    arr1.push(current.value);
-    let reversedArr=[];
-    for (let i=0 ; i<arr1.length ; i++ ){
-      reversedArr[i]=arr1[arr1.length-i-1];
-    }
-    let newNode = new Node(reversedArr[0]);
-    let newll = new LinkedList();
-    newll.head = newNode;
-    for (let i=1 ; i<reversedArr.length ; i++ ){
-      newll.append(reversedArr[i]);
-    }
-    return newll.toString() ;
+    return newL.toString() ;
   }
+  // reverse(){
+  //   let current= this.head;
+  //   let arr1=[];
+  //   while(current.next){
+  //     arr1.push(current.value);
+  //     current = current.next;
+  //   }
+  //   arr1.push(current.value);
+  //   let reversedArr=[];
+  //   for (let i=0 ; i<arr1.length ; i++ ){
+  //     reversedArr[i]=arr1[arr1.length-i-1];
+  //   }
+  //   let newNode = new Node(reversedArr[0]);
+  //   let newll = new LinkedList();
+  //   newll.head = newNode;
+  //   for (let i=1 ; i<reversedArr.length ; i++ ){
+  //     newll.append(reversedArr[i]);
+  //   }
+  //   return newll.toString() ;
+  // }
   
 
+
+}
+
+function isPalindrom(ll){
+  let newL = new LinkedList();
+  let current = ll.head;
+  let newNode = new Node(current.val);
+  newL.insert(newNode.val);
+  while(current.next){
+    current = current.next;
+    let newNode = new Node(current.val);
+    newL.insert(newNode.val);
+  }
+  // console.log(newL.toString());
+  // console.log(ll.toString());
+  if(newL.toString() === ll.toString()){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 
-function llmerge(l1 , l2){
-  let first = l1.head.value;
-  let second = l2.head.value;
-  let newNode = new Node(first);
-  let newll = new LinkedList();
-  newll.head = newNode;
-  newll.append(second);
 
-  while((l1.head.next)||(l2.head.next)){
-    if (l1.head.next){
-      let first2 = l1.head.next.value;
-      newll.append(first2);
+function zipLists(ll1 , ll2){
+  let current1 = ll1.head;
+  let current2 = ll2.head;
+  let newL = new LinkedList();
+  let node1 = new Node(current1.value);
+  let node2 = new Node(current2.value);
+  newL.append(node1.value);
+  newL.append(node2.value);
+  while(current1.next || current2.next){
+    if(current1.next){
+      current1 = current1.next;
+      let node = new Node(current1.value);
+      newL.append(node.value);
     }
-    if (l2.head.next){
-      let second2 = l2.head.next.value;
-      newll.append(second2);        
-    }
-    l1.head = l1.head.next;
-    l2.head = l2.head.next;
-      
-    if (!l1.head){
-      l1.head=0;
-      l1.next=null;
-    }
-    if (!l2.head){
-      l2.head=0;
-      l2.next=null;
+    if(current2.next){
+      current2 = current2.next;
+      let node = new Node(current2.value);
+      newL.append(node.value);
     }
   }
-  return newll ; 
+  return newL.toString();
 }
+
+function removeDuplicates(ll){
+  let newL = new LinkedList();
+  let current = ll.head;
+  let newNode = new Node(ll.head.value);
+  newL.append(newNode.value);
+  while(current.next){
+    current = current.next;
+    if(!newL.includes(current.value)){
+      newNode = new Node (current.value);
+      newL.append(newNode.value);
+    }
+  }
+  return newL.toString();
+}
+
 
 
 const l1 = new LinkedList();
@@ -198,9 +226,10 @@ l1.append(100);
 l1.append(200);
 l1.append(300);
 l1.append(400);
+l1.append(200);
 
 console.log(l1.toString());
-console.log('---------------------------------------');
+// console.log('---------------------------------------');
 
 
 const l2 = new LinkedList();
@@ -208,11 +237,10 @@ l2.append(1);
 l2.append(2);
 l2.append(3);
 l2.append(4);
+// l2.insertBefore(3,0);
 
-console.log(l2.toString());
+// console.log(l2.toString());
 console.log('---------------------------------------');
-
-const mergedLL = llmerge(l1 , l2);
-console.log(mergedLL.toString());
-
+// console.log(zipLists(l1 , l2));
+console.log(removeDuplicates(l1));
 module.exports = LinkedList;
