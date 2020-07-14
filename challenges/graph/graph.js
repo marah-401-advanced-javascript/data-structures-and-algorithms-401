@@ -85,4 +85,6 @@ console.log(graph.size());
 // graph.size();
 
 // console.log('NEIGHBORS', graph.getNeighbors(ten));
+
+module.exports = Graph;
   
