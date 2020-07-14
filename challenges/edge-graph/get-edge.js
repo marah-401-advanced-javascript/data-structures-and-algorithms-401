@@ -1,29 +1,17 @@
 'use strict';
+
+
 const Graph = require('../graph/graph.js');
 
-class GetEdge extends Graph {
+function getEdge(graph, array) {
 
-  getEdge(arr) {
-    let counter = 0;
-    let sum = 0;
-    for (let i = 1; i < arr.length; i++) {
-      let x = this._adjancyList.get(arr[i-1]);
-      for (let j = 0; j < x.length; j++) {
-        if (arr[i].value === x[j].vertex.value) {
-          counter++;
-          sum += x[j].weight;
-          break;
-        }
-      }
-
-    }
-    if(counter === arr.length-1){
-      return `True, $${sum}`;
-    }else{
-      return `False, $0`;
-
+  let neighrbor = graph.getNeighbors(array[0]);
+  for (let i = 0; i < neighrbor.length; i++) {
+    if (array[1] === neighrbor[i].vertex) {
+      return `True, ${neighrbor[i].weight}$`;
     }
   }
+  return `False, 0$`;
+  
 }
 
-module.exports = GetEdge;
