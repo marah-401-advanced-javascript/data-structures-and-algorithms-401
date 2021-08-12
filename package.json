@@ -208,7 +208,7 @@
     "picomatch": "^2.2.2",
     "pkg-dir": "^4.2.0",
     "pirates": "^4.0.1",
-    "path-parse": "^1.0.6",
+    "path-parse": "^1.0.7",
     "pretty-format": "^26.0.1",
     "prelude-ls": "^1.2.1",
     "posix-character-classes": "^0.1.1",
