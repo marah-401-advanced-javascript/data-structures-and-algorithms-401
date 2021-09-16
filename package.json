@@ -237,7 +237,7 @@
     "rsvp": "^4.8.5",
     "safer-buffer": "^2.1.2",
     "semver": "^7.3.2",
-    "set-value": "^2.0.1",
+    "set-value": "^4.0.1",
     "set-blocking": "^2.0.0",
     "shebang-command": "^2.0.0",
     "shebang-regex": "^3.0.0",
