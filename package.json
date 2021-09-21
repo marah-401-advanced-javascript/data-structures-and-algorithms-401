@@ -272,7 +272,7 @@
     "supports-hyperlinks": "^2.1.0",
     "through": "^2.3.8",
     "throat": "^5.0.0",
-    "tmpl": "^1.0.4",
+    "tmpl": "^1.0.5",
     "tmp": "^0.0.33",
     "to-fast-properties": "^2.0.0",
     "remove-trailing-separator": "^1.1.0",
