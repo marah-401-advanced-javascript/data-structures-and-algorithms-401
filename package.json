@@ -173,7 +173,7 @@
     "decamelize": "^1.2.0",
     "merge-stream": "^2.0.0",
     "mimic-fn": "^2.1.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "mixin-deep": "^1.3.2",
     "json-schema-traverse": "^0.4.1",
     "mime-db": "^1.44.0",
